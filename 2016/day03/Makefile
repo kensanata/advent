@@ -3,3 +3,6 @@ all: part1 part2
 	./part1 < data
 	echo Part 2
 	./part2 < data
+
+clean:
+	rm part1 part2
