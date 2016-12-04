@@ -1,0 +1,16 @@
+(let ((instructions (mapcar (lambda (s)
+			      (cons (aref s 0)
+				    (string-to-number (substring s 1))))
+			    (split-string "R5, L5, R5, R3")))
+      (direction 0)
+      (x 0)
+      (y 0))
+  (dolist (instruction instructions)
+    (destructuring-bind (turn . steps) instruction
+      (setq direction (mod (funcall (if (= turn ?R) '1+ '1-) direction) 4))
+      (case direction
+	(0 (setq y (+ y steps)))
+	(1 (setq x (+ x steps)))
+	(2 (setq y (- y steps)))
+	(3 (setq x (- x steps))))))
+  (+ (abs x) (abs y)))
