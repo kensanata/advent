@@ -18,4 +18,5 @@ zzzyyyxxxwwva-123[xyzwa]
 
 For every string with correct CHECKSUM, rotate the letters in NAME but
 the ID. The example given shows how the letter `q` in a NAME with ID
-343 would end up a `v`.
+343 would end up a `v`. To find the actual answer asked for in the
+question, grep the result for a line containing "north".
