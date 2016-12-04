@@ -13,27 +13,26 @@ class Part1 {
   }
   
   int readValidSectorId () {
-    try {
-      String room = readRoom();
-      Matcher m = p.matcher(room);
-      if (m.matches()) {
-        String name = m.group(1);
-        int id = Integer.parseInt(m.group(2));
-        String checksum = m.group(3);
-        // count the occurences of every character
-        HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
-        for (Character c: name.toCharArray()) {
-          if (charMap.containsKey(c)) {
-            charMap.put(c, charMap.get(c) + 1);
-          } else {
-            charMap.put(c, 1);
-          }          
-        }
-        // get the five most common characters
-        String computed =
-          charMap.keySet().stream()
-          .filter((elem) -> elem.charValue() != '-')
-          .sorted(new Comparator<Character>() {
+    String room = readRoom();
+    Matcher m = p.matcher(room);
+    if (m.matches()) {
+      String name = m.group(1);
+      int id = Integer.parseInt(m.group(2));
+      String checksum = m.group(3);
+      // count the occurences of every character
+      HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
+      for (Character c: name.toCharArray()) {
+        if (charMap.containsKey(c)) {
+          charMap.put(c, charMap.get(c) + 1);
+        } else {
+          charMap.put(c, 1);
+        }          
+      }
+      // get the five most common characters
+      String computed =
+        charMap.keySet().stream()
+        .filter((elem) -> elem.charValue() != '-')
+        .sorted(new Comparator<Character>() {
             @Override
             public int compare(Character a, Character b) {
               int r = charMap.get(b).compareTo(charMap.get(a));
@@ -43,25 +42,25 @@ class Part1 {
               return r;
             }
           })
-          .limit(5)
-          .map(Object::toString)
-          .collect(Collectors.joining());
-        if (checksum.equals(computed)) {
-          return id;
-        }
-        // else do nothing
+        .limit(5)
+        .map(Object::toString)
+        .collect(Collectors.joining());
+      System.out.println(room + " / " + checksum);
+      if (checksum.equals(computed)) {
+        return id;
       }
-    } catch (NoSuchElementException e) {
-      // do nothing
     }
     return 0;
   }
 
   int sum () {
     int sum = 0;
-    int sectorId;
-    while ((sectorId = readValidSectorId()) > 0) {
-      sum += sectorId;
+    try {
+      while (true) {
+        sum += readValidSectorId();
+      }
+    } catch (NoSuchElementException e) {
+      // end of file
     }
     return sum;
   }
