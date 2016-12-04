@@ -1,8 +1,8 @@
 # Advent of Code
 
-[Advent of Code](http://adventofcode.com/) "a series of small
+[Advent of Code](http://adventofcode.com/) is "a series of small
 programming puzzles for a variety of skill levels." I'm going to try
-to solve in various programming languages.
+to solve these puzzles in various programming languages.
 
 The code I wrote and the wording of the questions is dedicated to
 the [public domain](LICENSE). The actual wording of the original
