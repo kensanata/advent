@@ -1,4 +1,4 @@
-# Day 4
+# Day 4: Java
 
 ## Part 1
 

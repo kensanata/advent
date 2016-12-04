@@ -1,4 +1,4 @@
-# Day 2
+# Day 2: Emacs Lisp
 
 ## Part 1
 
