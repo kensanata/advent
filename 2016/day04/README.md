@@ -14,3 +14,8 @@ This checksum is valid, for example and thus the sum would be 123:
 zzzyyyxxxwwva-123[xyzwa]
 ```
 
+## Part 2
+
+For every string with correct CHECKSUM, rotate the letters in NAME but
+the ID. The example given shows how the letter `q` in a NAME with ID
+343 would end up a `v`.
