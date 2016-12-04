@@ -7,11 +7,11 @@ class Part1 {
 
   Scanner scanner = new Scanner(System.in);
   Pattern p = Pattern.compile("([a-z-]+)-([0-9]+)\\[([a-z]{5})\\]");
-  
+
   String readRoom() {
     return scanner.next();
   }
-  
+
   int readValidSectorId () {
     String room = readRoom();
     Matcher m = p.matcher(room);
@@ -26,7 +26,7 @@ class Part1 {
           charMap.put(c, charMap.get(c) + 1);
         } else {
           charMap.put(c, 1);
-        }          
+        }
       }
       // get the five most common characters
       String computed =
@@ -45,10 +45,10 @@ class Part1 {
         .limit(5)
         .map(Object::toString)
         .collect(Collectors.joining());
-      System.out.println(room + " / " + checksum);
       if (checksum.equals(computed)) {
         return id;
       }
+      // System.out.println(computed + " != " + checksum);
     }
     return 0;
   }
