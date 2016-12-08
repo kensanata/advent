@@ -35,8 +35,13 @@
 
 (defn result
   [hashes]
-  (println (join (map (fn [hash]
+  (println "Most common letters: "
+           (join (map (fn [hash]
                         (first (first (sort-by val > hash))))
+                      hashes)))
+  (println "Least common letters:"
+           (join (map (fn [hash]
+                        (first (last (sort-by val > hash))))
                       hashes))))
 
 (defn -main
