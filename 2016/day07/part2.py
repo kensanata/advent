@@ -12,7 +12,7 @@ def check_line(line):
         for i in range(len(word) - 2):
             if word[i] == word[i+2] and word[i] != word[i+1]:
                 for other in inside:
-                    if re.search(word[i+1] + word[i] + word[i+1], other):
+                    if word[i+1] + word[i] + word[i+1] in other:
                         return 1
 
 def check_input():
