@@ -9,10 +9,10 @@ def check_line(line):
         if part[1]:
             inside.append(part[1])
     for word in outside:
-        for i in range(len(word) - 2):
-            if word[i] == word[i+2] and word[i] != word[i+1]:
+        for a, b, c in zip(word, word[1:], word[2:]):
+            if a == c and a != b:
                 for other in inside:
-                    if word[i+1] + word[i] + word[i+1] in other:
+                    if b + a + b in other:
                         return 1
 
 def check_input():
