@@ -1,4 +1,4 @@
-import sys
+import fileinput
 import re
 
 def check_line(line):
@@ -17,7 +17,7 @@ def check_line(line):
 
 def check_input():
     sum = 0
-    for line in sys.stdin:
+    for line in fileinput.input():
         if check_line(line):
             sum += 1
     return sum
