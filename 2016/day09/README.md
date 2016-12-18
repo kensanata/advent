@@ -10,7 +10,7 @@ Examples given:
 ```
 ADVENT → 6
 A(1x5)BC → ABBBBBC → 7
-(6x1)(1x3)A → (1x3)A → 6 (expansions are not processed)
+(6x1)(1x3)A → (1x3)A → 6
 ```
 
 ## Part 2
