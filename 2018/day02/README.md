@@ -23,7 +23,7 @@ Example:
     Result: 4 × 3 = 12
 ```
 
-## First Part
+## Second Part
 
 Given a list of strings, find the two strings that differ in exactly
 one position and return the common characters.
