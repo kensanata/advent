@@ -17,10 +17,10 @@ Example:
     aabcdd    1       0
     abcdee    1       0
     ababab    0       1
-	------ ------ --------
-	Sums      4       3
-	
-	Result: 4 × 3 = 12
+    ------ ------ --------
+    Sums      4       3
+    
+    Result: 4 × 3 = 12
 ```
 
 ## First Part
@@ -31,13 +31,13 @@ one position and return the common characters.
 Example:
 
 ```
-	abcde
-	fghij
-	klmno
-	pqrst
-	fguij
-	axcye
-	wvxyz
+    abcde
+    fghij
+    klmno
+    pqrst
+    fguij
+    axcye
+    wvxyz
 ```
 
 The result is `fgij`.
