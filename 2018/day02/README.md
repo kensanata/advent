@@ -23,3 +23,24 @@ Example:
 	Result: 4 × 3 = 12
 ```
 
+## First Part
+
+Given a list of strings, find the two strings that differ in exactly
+one position and return the common characters.
+
+Example:
+
+```
+	abcde
+	fghij
+	klmno
+	pqrst
+	fguij
+	axcye
+	wvxyz
+```
+
+The result is `fgij`.
+
+My first attempt at a solution failed as soon as the string `aaaaa`
+was added to the input. So do check for that. 🙂
