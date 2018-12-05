@@ -50,3 +50,11 @@ on two days, so the answer would be 10 * 24 = 240.
 
 The records need to be sorted, first. If you reverse the input, it
 must still work.
+
+## Part 2
+
+Find the guard that is the most frequently asleep on the same minute.
+In this example that would be guard 99 on minute 45 (3 times).
+Multiply the minute and id again, so in this case the answer would be
+99 * 45 = 4455.
+
