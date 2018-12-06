@@ -1,0 +1,16 @@
+(var s "dabAcCaCBAcCcaDA")
+(var changes? true)
+(while changes?
+  (set changes? false)
+  (var i (# s))
+  (while (>= i 2)
+    (var a (string.byte s (- i 1)))
+    (var b (string.byte s i))
+    ;; A is 65, a is 97
+    (when (= 32 (math.abs (- b a)))
+      (set changes? true)
+      (set s (.. (string.sub s 1 (- i 2))
+                 (string.sub s (+ 1 i) (# s))))
+      (set i (- i 1)))
+    (set i (- i 1))))
+(print (# s))
