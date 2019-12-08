@@ -1,6 +1,5 @@
-w =. ;: 1!:1 <'data'      NB. a boxed array of words, numbers and linefeeds
-i =. 2 * i. (# w) % 2     NB. the indexes of the numbers
-n =. ". > i { w    	  NB. the list of numbers, opened
+w =. ;: 1!:1 <'data'           NB. a boxed array of words
+n =. ". > ((#w) $ 1 0) # w     NB. pick the odd ones, unboxed and evaluated
 
 fuel =. 3 : '(<. y % 3) - 2'
 
