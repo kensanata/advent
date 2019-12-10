@@ -4,20 +4,20 @@ o =: ". > ((#w) $ 1 0) # w
 
 NB. this steps through the "program" (currently there are three
 NB. opcodes defined: 1 and 2 take three arguments each, 99 takes no
-NB. argument ands the computation.
+NB. argument ends the computation
 step =: dyad define
 select. y { x
 case. 1 do.
   a =. ((y+1){x){x
   b =. ((y+2){x){x
   c =. ((y+3){x)
-  n =: (a + b) c } x
+  n =. (a + b) c } x
   n step y+4
 case. 2 do.
   a =. ((y+1){x){x
   b =. ((y+2){x){x
   c =. ((y+3){x)
-  n =: (a * b) c } x
+  n =. (a * b) c } x
   n step y+4
 case. 99 do.
   0 { x
