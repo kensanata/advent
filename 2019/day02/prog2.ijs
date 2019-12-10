@@ -35,12 +35,18 @@ NB. Example:
 66 77 fix o
 
 NB. I need a function that can call step for all sorts of "fixed"
-NB. programs:
-try =. 4 : '((x, y) fix o) step 0'
+NB. programs. Note rank 0!
+try =. (4 : '((x, y) fix o) step 0')"0
 
 NB. Example (same result as above)
 12 try 2
 
 NB. Now let's find all the pairs between 0 and 99 where the result is
 NB. 19690720:
-19690720=.try/~i.100
+19690720=try/~i.100
+
+NB. Unravel the matrix, find the index of the one cell that's true,
+NB. and we're done. The reason that we're done is that the solution is
+NB. "What is 100 * noun + verb?" Not quite surprisingly, as 100 is the
+NB. length of a row, that's exactly what we're getting.
+I.,19690720=try/~i.100
